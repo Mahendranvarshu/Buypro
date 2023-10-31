@@ -19,6 +19,8 @@ public class CustomerService  implements CustomerInterface {
 
 
 
+
+
     public ResponseEntity<String> save(Customers customers) {
 
         customers.setCreateby(LocalDateTime.now());
@@ -29,7 +31,8 @@ public class CustomerService  implements CustomerInterface {
     }
 
     public Customers get(Integer id) {
-        return customerRepo.findByEntityId(id);
+        return  customerRepo.findByEntityId(id);
+
 
     }
 
@@ -42,4 +45,6 @@ public class CustomerService  implements CustomerInterface {
         customerRepo.deleteById(id);
         return new ResponseEntity<>("Delete Customer Succesfully",HttpStatus.OK);
     }
+
+
 }

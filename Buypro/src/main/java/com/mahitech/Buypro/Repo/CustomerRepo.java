@@ -12,4 +12,9 @@ public interface CustomerRepo extends JpaRepository<Customers, Integer> {
 
     @Query(value ="SELECT customers FROM Customers customers WHERE customers.id = :id")
     Customers findByEntityId(@Param("id") Integer id);
+
+
+
+    @Query(value ="SELECT customers FROM Customers customers WHERE customers.name = :name")
+    Customers findByUsername( @Param("name")String name);
 }

@@ -1,10 +1,7 @@
 package com.mahitech.Buypro.Data;
 
 import jakarta.persistence.*;
-import jdk.jfr.Category;
 import lombok.Data;
-
-import javax.swing.text.DateFormatter;
 
 @Data
 @Entity
@@ -35,5 +32,10 @@ public class Product {
 
     @Column(name = "Offer_End_Date")
     private String offerEnd_date;
+
+    @Lob
+    @Column(name = "Product_img")
+    private byte[] image;
+
 
 }
